@@ -1,0 +1,57 @@
+{
+  "build": {
+    "beforeDevCommand": "yarn dev",
+    "beforeBuildCommand": "yarn build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "Tiger's Minecraft Server Launcher",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "window": {
+        "all": true
+      }
+    },
+    "macOSPrivateApi": true,
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "io.github.tigercrl.tmsl",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "fullscreen": false,
+        "height": 800,
+        "width": 1280,
+        "minHeight": 700,
+        "minWidth": 1100,
+        "resizable": true,
+        "title": "Tiger's Minecraft Server Launcher",
+        "visible": true,
+        "decorations": false,
+        "transparent": true
+      }
+    ]
+  }
+}
