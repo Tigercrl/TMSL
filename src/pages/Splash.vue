@@ -8,7 +8,7 @@
 			</span>
 	</div>
 </template>
-x
+
 <style scoped>
 * {
   flex-shrink: 0;
