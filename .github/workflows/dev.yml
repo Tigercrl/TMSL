@@ -36,13 +36,13 @@ jobs:
       - name: Sync node version
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 'lts/*'
 
       - name: Install PNPM
         run: npm i -g pnpm
 
       - name: Install frontend dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfileq
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
