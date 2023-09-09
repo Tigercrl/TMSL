@@ -33,11 +33,13 @@ jobs:
         with:
           workspaces: './src-tauri -> target'
 
-      - name: Sync node version and setup cache
+      - name: Sync node version
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-          cache: 'pnpm'
+
+      - name: Install PNPM
+        run: npm i -g pnpm
 
       - name: Install frontend dependencies
         run: pnpm install
