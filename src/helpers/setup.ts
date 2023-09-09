@@ -1,8 +1,7 @@
-// Setup wizard
-async function setupWizard() {
-	
-}
+import { config, saveConfig } from "./config.ts";
 
-export {
-	setupWizard
+// Setup wizard
+export async function setupWizard() {
+
+	saveConfig();
 }

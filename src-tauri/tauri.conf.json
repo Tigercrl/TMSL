@@ -23,6 +23,9 @@
       "path": {
         "all": true
       },
+      "process": {
+        "all": true
+      },
       "shell": {
         "all": false,
         "open": true

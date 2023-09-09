@@ -3,8 +3,9 @@ import { BaseDirectory, createDir, exists, readTextFile, writeTextFile } from '@
 // Default config
 var defaultConfig = JSON.stringify({
 	"firstLoad": true,
+	"lang": "auto",
 	"theme": "light"
-}, null, 4)
+})
 
 // Save default config if config does not exists
 async function saveDefaultConfig() {
@@ -17,18 +18,20 @@ async function saveDefaultConfig() {
 }
 
 // Read config
-var config;
+var config = {};
 async function loadConfig() {
 	config = JSON.parse(await readTextFile('config.json', { dir: BaseDirectory.AppData }));
 }
 
 // Save config
 async function saveConfig() {
-	await writeTextFile('config.json', config, { dir: BaseDirectory.AppData });
+	saveDefaultConfig();
+	await writeTextFile('config.json', JSON.stringify(config), { dir: BaseDirectory.AppData });
 }
 
 export {
 	config,
 	loadConfig,
-	saveDefaultConfig
+	saveConfig,
+	saveDefaultConfig,
 }
