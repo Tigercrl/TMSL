@@ -70,7 +70,7 @@ export default {
       var style = document.createElement("style");
       style.innerHTML = "@keyframes logo-container-anim{ 0% { width: 192px; } 100% { width: " + width + "; } }";
       document.getElementById("app").appendChild(style);
-    },5)
+    },50)
   }
 }
 </script>
