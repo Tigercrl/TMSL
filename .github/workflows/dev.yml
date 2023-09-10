@@ -42,7 +42,7 @@ jobs:
         run: npm i -g pnpm
 
       - name: Install frontend dependencies
-        run: pnpm install --no-frozen-lockfileq
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
