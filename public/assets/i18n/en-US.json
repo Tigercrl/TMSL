@@ -1,0 +1,9 @@
+{
+  "splash.tmsl": "Tiger's MC Server Launcher",
+  "splash.desc": "A powerful Minecraft server launcher",
+  "splash.footer": "Tiger's Minecraft Server Launcher v{version}",
+  "user-guidelines.title": "User Guidelines (Written in Chinese)",
+  "user-guidelines.agree-countdown": "Agree ({time}s)",
+  "user-guidelines.agree": "Agree",
+  "user-guidelines.disagree": "Disagree & quit"
+}

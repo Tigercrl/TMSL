@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="gaussian-blur-filter-0" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="gaussian-blur 1 10">
+      <feGaussianBlur stdDeviation="10 10" edgeMode="none"/>
+    </filter>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="246.649" y1="64.702" x2="246.649" y2="419.965" id="gradient-0" gradientTransform="matrix(1.250465, -1.250465, 1.250465, 1.250465, -364.37289, 252.495801)">
+      <stop offset="0" style="stop-color: rgb(0, 234, 255);"/>
+      <stop offset="1" style="stop-color: rgb(0, 42, 255);"/>
+    </linearGradient>
+  </defs>
+  <rect x="27" y="27" width="454.747" height="454.747" style="stroke: rgb(0, 0, 0); stroke-width: 0px; filter: url(#gaussian-blur-filter-0); opacity: 0.75; fill: rgb(167, 167, 167);" rx="106.814" ry="106.814"/>
+  <rect x="22.626" y="22.626" width="454.747" height="454.747" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 255, 255);" rx="106.814" ry="106.814"/>
+  <path d="M 233.29 141.959 L 233.29 375.167 C 233.29 384.766 240.755 389.743 250.354 389.743 C 259.952 389.743 267.418 384.766 267.418 375.167 L 267.418 141.959 L 348.116 141.959 C 356.293 141.959 361.625 134.849 361.625 126.673 C 361.625 118.141 356.648 110.675 348.116 110.675 L 152.236 110.675 C 143.704 110.675 138.727 118.141 138.727 126.673 C 138.727 134.849 143.704 141.959 152.591 141.959 Z" style="fill: url(#gradient-0); white-space: pre;"/>
+</svg>

@@ -1,30 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/theme-dark.css" />
-    <link rel="stylesheet" href="/css/animate.min.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiger's Minecraft Server Launcher</title>
-  </head>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/assets/css/animate.min.css"/>
+    <link rel="stylesheet" href="/assets/css/fontawesome.min.css"/>
+</head>
 
-  <body>
-    <nav class="nav" data-tauri-drag-region>
-      <button class="nav-button">✕</button>
-      <button class="nav-button">—</button>
-    </nav>
-    <div id="app" class="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-    <script src="/js/i18n.min.js"></script>
-    <script>
-      function writeLang(){
-        var texts = document.getElementsByTagName('*');
-        for (let i = 0; i < texts.length; i++){
-          texts[i].innerHTML = i18n(texts[i].innerHTML);
-        }
-      }
-    </script>
-  </body>
+<body oncontextmenu="return false;">
+<div id="app" class="app"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
 </html>

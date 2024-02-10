@@ -1,0 +1,20 @@
+.theme-dark * {
+    --main-bg-color: #16181c;
+    --border-color-lightgray: #888;
+    --border-color-gray: #bbb;
+    --border-color-darkgray: #ddd;
+    --text-color: #eee;
+    --text-color-light: #555;
+    --primary-color: #4d50f8;
+    --primary-color-dark: #3d4ded;
+    --card-bg-color: #27292e;
+    --transparent-bg-color: rgba(0, 0, 0, 0.5);
+    --shadow-primary-color: 0 5px 10px rgba(61, 77, 237, .5);
+    --shadow-smallest: 0px 2px 4px rgba(255, 255, 255, .1);
+    --shadow-extra-small: 0px 4px 8px rgba(255, 255, 255, .12);
+    --shadow-small: 0 5px 10px rgba(255, 255, 255, .12);
+    --shadow-medium: 0 8px 30px rgba(255, 255, 255, .12);
+    --shadow-large: 0 30px 60px rgba(255, 255, 255, .12);
+    --shadow-hover: 0 30px 60px rgba(255, 255, 255, .12);
+    --shadow-sticky: 0 12px 10px -10px rgba(255, 255, 255, .12);
+}

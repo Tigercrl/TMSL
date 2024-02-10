@@ -1,0 +1,84 @@
+:root {
+  --main-bg-color: #ffffff;
+  --font-sans: "MiSans VF";
+  --font-minecraft: "Minecraft AE Pixel";
+  --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --border-color-lightgray: #ddd;
+  --border-color-gray: #aaa;
+  --border-color-darkgray: #888;
+  --text-color: #313131;
+  --text-color-light: #fff;
+  --primary-color: #4da3f8;
+  --primary-color-dark: #3d9ded;
+  --card-bg-color: #fff;
+  --transparent-bg-color: rgba(255, 255, 255, 0.5);
+  --shadow-primary-color: 0 5px 10px rgba(77, 163, 248, .5);
+  --shadow-smallest: 0px 2px 4px rgba(0, 0, 0, .1);
+  --shadow-extra-small: 0px 4px 8px rgba(0, 0, 0, .12);
+  --shadow-small: 0 5px 10px rgba(0, 0, 0, .12);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, .12);
+  --shadow-large: 0 30px 60px rgba(0, 0, 0, .12);
+  --shadow-hover: 0 30px 60px rgba(0, 0, 0, .12);
+  --shadow-sticky: 0 12px 10px -10px rgba(0, 0, 0, .12);
+}
+
+* {
+  font-family: var(--font-sans);
+}
+
+body, html, .app {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: var(--main-bg-color);
+}
+
+body {
+  margin: 0;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--border-color-gray);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.app {
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: none;
+}
+
+.nav {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  padding: 10px;
+}
+
+a {
+  color: var(--text-color);
+  transition: 0.1s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+@font-face {
+  font-family: "MiSans VF";
+  src: url("/assets/fonts/MiSans VF.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Minecraft AE Pixel";
+  src: url("/assets/fonts/Minecraft AE Pixel.ttf") format("truetype");
+}

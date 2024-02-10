@@ -1,0 +1,72 @@
+name: Auto Build Dev Artifacts
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-latest, ubuntu-20.04, windows-latest]
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies (Ubuntu only)
+        if: matrix.platform == 'ubuntu-20.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev
+
+      - name: Rust setup
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
+      - name: Sync node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      - name: Install PNPM
+        run: npm i -g pnpm
+
+      - name: Install frontend dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build the app
+        uses: tauri-apps/tauri-action@v0
+
+      - name: Upload Artifact (Windows)
+        if: matrix.platform == 'windows-latest'
+        uses: actions/upload-artifact@v3
+        with:
+          name: TMSL-dev-windows
+          path: src-tauri/target/release/*.exe
+
+
+      - name: Upload Artifact (macOS)
+        if: matrix.platform == 'macos-latest'
+        uses: actions/upload-artifact@v3
+        with:
+          name: TMSL-dev-macos
+          path: src-tauri/target/release/bundle/dmg/*.dmg
+
+
+      - name: Upload Artifact (Ubuntu)
+        if: matrix.platform == 'ubuntu-20.04'
+        uses: actions/upload-artifact@v3
+        with:
+          name: TMSL-dev-linux
+          path: src-tauri/target/release/bundle/deb/*.deb
