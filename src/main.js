@@ -9,11 +9,14 @@ import {os} from "@tauri-apps/api";
 
 export let i18n;
 export let version;
-export const isMacOS = await os.type() === "Darwin";
+export let isMacOS;
 
 main();
 
 async function main() {
+    // macOS detect
+    isMacOS = await os.type() === "Darwin";
+
     // Get version
     version = JSON.parse(await (await fetch("../package.json")).text()).version;
 
