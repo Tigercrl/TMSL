@@ -3,7 +3,6 @@
 
 use std::fs::canonicalize;
 use std::env;
-use std::path::Path;
 use std::path::PathBuf;
 use std::process::Command;
 use std::collections::HashSet;
@@ -121,7 +120,7 @@ fn get_java_paths() -> Option<HashSet<PathBuf>> {
     let mut java_paths = HashSet::new();
 
     // 检测环境变量
-    java_paths.extend(get_all_jre_path());
+    java_paths.extend(get_java_in_path());
 
     // Java默认安装位置
     let java_installation_paths = [
