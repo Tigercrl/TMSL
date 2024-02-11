@@ -43,7 +43,7 @@ jobs:
       - name: Build tauri app
         uses: tauri-apps/tauri-action@v0
         with:
-          includeDebug: true
+          args: --verbose
 
       - name: Upload Artifact (Windows)
         if: matrix.platform == 'windows-latest'
