@@ -87,7 +87,7 @@ fn get_java_in_registry_key(key: RegKey) -> HashSet<PathBuf> {
             }
         }
     }
-    return check_java_paths(java_paths);
+    return java_paths;
 }
 
 // MacOS
