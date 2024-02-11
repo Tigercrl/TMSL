@@ -39,11 +39,11 @@ jobs:
 
       - name: Install frontend dependencies
         run: pnpm install --no-frozen-lockfile
-        with:
-          includeDebug: true
 
       - name: Build tauri app
         uses: tauri-apps/tauri-action@v0
+        with:
+          includeDebug: true
 
       - name: Upload Artifact (Windows)
         if: matrix.platform == 'windows-latest'
