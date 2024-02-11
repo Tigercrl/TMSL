@@ -6,6 +6,11 @@ use std::env;
 use std::path::PathBuf;
 use std::process::Command;
 use std::collections::HashSet;
+#[cfg(target_os = "windows")]
+use winreg::{
+    enums::{HKEY_LOCAL_MACHINE, KEY_READ, KEY_WOW64_32KEY, KEY_WOW64_64KEY},
+    RegKey,
+};
 
 /* 获取java -version命令的输出 */
 #[tauri::command]
@@ -59,21 +64,21 @@ fn get_java_paths() -> Option<HashSet<PathBuf>> {
 
     for key in key_paths {
         if let Ok(java_key) = RegKey::predef(HKEY_LOCAL_MACHINE).open_subkey_with_flags(key, KEY_READ | KEY_WOW64_32KEY) {
-            java_paths.extend(get_java_in_register_key(java_key));
+            java_paths.extend(get_java_in_registry_key(java_key));
         }
         if let Ok(java_key) = RegKey::predef(HKEY_LOCAL_MACHINE).open_subkey_with_flags(key, KEY_READ | KEY_WOW64_64KEY) {
-            java_paths.extend(get_java_in_register_key(java_key));
+            java_paths.extend(get_java_in_registry_key(java_key));
         }
     }
-    return java_paths;
+    return check_java_paths(java_paths);
 }
 
 // 获取注册表中的Java
 #[cfg(target_os = "windows")]
-fn get_java_in_register_key(java_key: RegKey) -> HashSet<PathBuf> {
+fn get_java_in_registry_key(key: RegKey) -> HashSet<PathBuf> {
     let mut java_paths = HashSet::new();
-    for sub_key in java_key.enum_keys().flatten() {
-        if let Ok(sub_key) = java_key.open_subkey(sub_key) {
+    for sub_key in key.enum_keys().flatten() {
+        if let Ok(sub_key) = key.open_subkey(sub_key) {
             let sub_key_value_names = [r"JavaHome", r"InstallationPath", r"\\hotspot\\MSI"];
             for sub_key_value in sub_key_value_names {
                 let path: Result<String, std::io::Error> = sub_key.get_value(sub_key_value);
@@ -82,7 +87,7 @@ fn get_java_in_register_key(java_key: RegKey) -> HashSet<PathBuf> {
             }
         }
     }
-    return check_java_at_filepaths(java_paths);
+    return check_java_paths(java_paths);
 }
 
 // MacOS
@@ -110,7 +115,7 @@ fn get_java_paths() -> Option<HashSet<PathBuf>> {
             java_paths.insert(entry);
         }
     }
-    return check_java_at_filepaths(java_paths);
+    return check_java_paths(java_paths);
 }
 
 // Linux
@@ -143,7 +148,7 @@ fn get_java_paths() -> Option<HashSet<PathBuf>> {
             }
         }
     }
-    return check_java_at_filepaths(java_paths);
+    return check_java_paths(java_paths);
 }
 
 // 检测环境变量
@@ -153,7 +158,7 @@ fn get_java_in_path() -> HashSet<PathBuf> {
 }
 
 // 检测是否为java
-fn check_java_at_filepaths(paths: HashSet<PathBuf>) -> Option<HashSet<PathBuf>> {
+fn check_java_paths(paths: HashSet<PathBuf>) -> Option<HashSet<PathBuf>> {
     let mut java_paths = HashSet::new();
     for path in paths {
         // 路径是否存在
