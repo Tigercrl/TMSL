@@ -161,6 +161,7 @@ onMounted(async () => {
   padding: 5px;
   border-radius: 7.5px;
   -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   border: 0.5px solid var(--border-color-lightgray);
   background: var(--transparent-bg-color);
   box-shadow: var(--shadow-medium);

@@ -37,6 +37,12 @@ async function main() {
     })
 
     // Load theme
+    if (isMacOS) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "/src/assets/css/macos.css";
+        document.head.appendChild(link);
+    }
     if ((config.theme === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches) || config.theme === "dark") {
         if (isMacOS) document.getElementsByTagName("html")[0].classList.add('theme-dark');
         document.getElementById("app").classList.add('theme-dark');

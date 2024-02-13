@@ -30,7 +30,6 @@ body, html, .app {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  background: var(--main-bg-color);
 }
 
 body {
@@ -55,6 +54,7 @@ hr {
   align-items: center;
   overflow: hidden;
   border: none;
+  background: var(--main-bg-color);
 }
 
 .nav {

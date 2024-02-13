@@ -13,16 +13,13 @@ async function minimizeApp() {
 }
 
 async function maximizeApp() {
-  const minimizeButton = document.getElementById("window-minimize-button");
   const maximizeButtonIcon = document.getElementById("window-maximize-button").getElementsByTagName("i")[0];
-  if (await getCurrent().isFullscreen()) {
-    minimizeButton.disabled = void (0);
+  if (await getCurrent().isMaximized()) {
     maximizeButtonIcon.className = "fas fa-up-right-and-down-left-from-center";
-    await getCurrent().setFullscreen(false);
+    await getCurrent().maximize();
   } else {
-    await getCurrent().setFullscreen(true);
-    minimizeButton.disabled = "disabled";
     maximizeButtonIcon.className = "fas fa-down-left-and-up-right-to-center";
+    await getCurrent().unmaximize();
   }
 }
 

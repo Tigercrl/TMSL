@@ -44,12 +44,26 @@ jobs:
         uses: tauri-apps/tauri-action@v0
 
 
-      - name: Upload Artifact (Windows)
+      - name: Upload Artifact (Windows|EXE)
         if: matrix.platform == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: TMSL-dev-windows
-          path: src-tauri/target/release/
+          name: TMSL-dev-windows-exe
+          path: src-tauri/target/release/*.exe
+
+      - name: Upload Artifact (Windows|MSI)
+        if: matrix.platform == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: TMSL-dev-windows-msi
+          path: src-tauri/target/release/bundle/msi/*.msi
+
+      - name: Upload Artifact (Windows|NSIS)
+        if: matrix.platform == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: TMSL-dev-windows-msi
+          path: src-tauri/target/release/bundle/nsis/*.exe
 
 
       - name: Upload Artifact (MacOS|DMG)
