@@ -16,10 +16,10 @@ async function maximizeApp() {
   const maximizeButtonIcon = document.getElementById("window-maximize-button").getElementsByTagName("i")[0];
   if (await getCurrent().isMaximized()) {
     maximizeButtonIcon.className = "fas fa-up-right-and-down-left-from-center";
-    await getCurrent().maximize();
+    await getCurrent().unmaximize();
   } else {
     maximizeButtonIcon.className = "fas fa-down-left-and-up-right-to-center";
-    await getCurrent().unmaximize();
+    await getCurrent().maximize();
   }
 }
 
