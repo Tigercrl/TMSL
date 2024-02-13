@@ -42,28 +42,41 @@ jobs:
 
       - name: Build tauri app
         uses: tauri-apps/tauri-action@v0
-        with:
-          args: --verbose
+
 
       - name: Upload Artifact (Windows)
         if: matrix.platform == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
           name: TMSL-dev-windows
-          path: src-tauri/target/release/*.exe
+          path: src-tauri/target/release/
 
 
-      - name: Upload Artifact (MacOS)
+      - name: Upload Artifact (MacOS|DMG)
         if: matrix.platform == 'macos-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: TMSL-dev-macos
+          name: TMSL-dev-macos-dmg
           path: src-tauri/target/release/bundle/dmg/*.dmg
 
+      - name: Upload Artifact (MacOS|APP)
+        if: matrix.platform == 'macos-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: TMSL-dev-macos-app
+          path: src-tauri/target/release/bundle/macos/*.app
 
-      - name: Upload Artifact (Ubuntu)
+
+      - name: Upload Artifact (Ubuntu|DEB)
         if: matrix.platform == 'ubuntu-20.04'
         uses: actions/upload-artifact@v4
         with:
-          name: TMSL-dev-linux
+          name: TMSL-dev-linux-deb
           path: src-tauri/target/release/bundle/deb/*.deb
+
+      - name: Upload Artifact (Ubuntu|AppImage)
+        if: matrix.platform == 'ubuntu-20.04'
+        uses: actions/upload-artifact@v4
+        with:
+          name: TMSL-dev-linux-appimage
+          path: src-tauri/target/release/bundle/appimage

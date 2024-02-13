@@ -1,6 +1,4 @@
-import {invoke, os} from "@tauri-apps/api";
-import {BaseDirectory, createDir, writeBinaryFile} from "@tauri-apps/api/fs";
-import {saveConfig} from "./config.js";
+import {invoke} from "@tauri-apps/api";
 
 export const javaPaths = [];
 export let java8Path;

@@ -6,6 +6,7 @@ import App from "./App.vue";
 import "./assets/css/styles.css";
 import "./assets/css/themes.css";
 import {os} from "@tauri-apps/api";
+import axios from "axios";
 
 export let i18n;
 export let version;
@@ -18,7 +19,7 @@ async function main() {
     isMacOS = await os.type() === "Darwin";
 
     // Get version
-    version = JSON.parse(await (await fetch("../package.json")).text()).version;
+    version = "1.0.0";
 
     // Load config
     await saveDefaultConfig();
@@ -28,9 +29,9 @@ async function main() {
     let lang = config.lang;
     if (lang === "auto") lang = navigator.language;
     let messages = {
-        "en-US": JSON.parse(await (await fetch("/assets/i18n/en-US.json")).text())
+        "en-US": (await axios.get("/assets/i18n/en-US.json")).data
     };
-    messages[lang] = JSON.parse(await (await fetch("/assets/i18n/" + lang + ".json")).text());
+    messages[lang] = (await axios.get("/assets/i18n/" + lang + ".json")).data
     i18n = createI18n({
         fallbackLocale: "en-US", locale: lang, messages: messages
     })

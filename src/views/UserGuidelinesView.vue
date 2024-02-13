@@ -57,26 +57,26 @@ onMounted(async () => {
       <h4>一、关于用户协议</h4>
       <strong>1. 发布地址</strong>
       <br>&emsp;&emsp;软件内(设置 - 关于TMSL - 用户协议)
-      <br>&emsp;&emsp;官方文档 - 用户协议：https://tmsl.tigercrl.top/docs/UserGuidelines.html
+      <br>&emsp;&emsp;官方文档 - 用户协议：<a href="https://tmsl.tigercrl.top/docs/UserGuidelines.html" target="_blank">https://tmsl.tigercrl.top/docs/UserGuidelines.html</a>
       <br>&emsp;&emsp;注：软件内的用户协议可能不是最新，以官方文档为准
       <br><strong>2. 更新时间</strong>
       <br>2023/12/20
       <h4>二、关于本软件</h4>
       本软件是由Tigercrl编写并维护的开源 Minecraft 服务器启动器。
-      <br>本软件的官方下载渠道为 官网(https://tmsl.tigercrl.top) 和
-      GitHub(https://github.com/Tigercrl/TMSL)，如果您是从其他渠道下载的，不保证软件的安全性和可靠性
+      <br>本软件的官方下载渠道为 官网(<a href="https://tmsl.tigercrl.top" target="_blank">https://tmsl.tigercrl.top</a>) 和
+      GitHub(<a href="https://github.com/Tigercrl/TMSL" target="_blank">https://github.com/Tigercrl/TMSL</a>)，如果您是从其他渠道下载的，不保证软件的安全性和可靠性
       <br>本软件根据 GNU GPL 3.0 开源，发布于 GitHub ，如果您是通过付费获取本软件的，请立刻退款、投诉商家并给予差评
       <h4 id="found-bug">三、遇到问题</h4>
       当您遇到本软件问题后，请先查阅：
-      <br>&emsp;&emsp;官方文档 - 常见问题： https://tmsl.tigercrl.top/docs/FAQ.html
-      <br>&emsp;&emsp;历史问题汇报： https://github.com/Tigercrl/TMSL/issues
+      <br>&emsp;&emsp;官方文档 - 常见问题： <a href="https://tmsl.tigercrl.top/docs/FAQ.html" target="_blank">https://tmsl.tigercrl.top/docs/FAQ.html</a>
+      <br>&emsp;&emsp;历史问题汇报： <a href="https://github.com/Tigercrl/TMSL/issues" target="_blank">https://github.com/Tigercrl/TMSL/issues</a>
       <br>如果您仍然无法解决问题，请查看<a href="#report">问题汇报</a>
       <h4 id="report">四、问题汇报</h4>
       如果您在使用本软件过程中遇到本软件的任何问题，并且您在尝试过<a href="#found-bug">遇到问题</a>栏目所说的解决方案后依然未能解决，可在
       GitHub 上汇报问题
-      <br>GitHub 漏洞追踪页面：https://github.com/Tigercrl/TMSL/issues/new
+      <br>GitHub 漏洞追踪页面：<a href="https://github.com/Tigercrl/TMSL/issues/new" target="_blank">https://github.com/Tigercrl/TMSL/issues/new</a>
       <br>如果您遇到的问题是关于MC服务器的，而非关于本软件的，请向相应服务端的漏洞追踪器汇报问题而非本软件的漏洞追踪页面
-      <br>在提问之前，建议先阅读<a target="_blank" href="https://ask.icodeq.com/">《提问的智慧》</a>以避免不必要的交流
+      <br>在提问之前，建议先阅读《提问的智慧》(<a href="https://ask.icodeq.com/" target="_blank">https://ask.icodeq.com/</a>)以避免不必要的交流
       <br>在提交问题时，请提供以下信息：
       <br>&emsp;&emsp;1. 问题描述
       <br>&emsp;&emsp;2. 截图（可选）
@@ -85,7 +85,7 @@ onMounted(async () => {
       <br>&emsp;&emsp;5. 其他（如果您觉得有必要）
       <h4>五、知识产权</h4>
       本软件提供的服务器由Minecraft官方及第三方提供，版权由 Mojang AB 所有。
-      <br>用户应当遵守 <a href="https://www.minecraft.net/zh-hans/eula">Minecraft 最终用户许可协议</a>，不对下载的游戏等文件擅自分发，或做其他被
+      <br>用户应当遵守 Minecraft 最终用户许可协议(<a href="https://www.minecraft.net/zh-hans/eula" target="_blank">https://www.minecraft.net/zh-hans/eula</a>)，不对下载的游戏等文件擅自分发，或者做其他被
       Minecraft 最终用户许可协议所禁止的行为。
       <h4>六、其他</h4>
       本协议适用于中华人民共和国法律，若与法律，以法律为准

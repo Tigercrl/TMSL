@@ -1,6 +1,6 @@
 import {BaseDirectory, createDir, exists, readTextFile, writeTextFile} from '@tauri-apps/api/fs';
 import {version} from "../main.js";
-import {getAllJavas, getJreVersion, java17Path, java8Path, setJava17Path, setJava8Path} from "./jre.js";
+import {getAllJavas, getJreVersion, setJava17Path, setJava8Path} from "./jre.js";
 
 // Default config
 const defaultConfig = {
